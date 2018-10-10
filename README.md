@@ -1,5 +1,7 @@
 # Assignment #1
 
+## Due: October 21, 2018 at 11:59pm
+
 ### Repository setup:
 
 1. By now you have followed the link to create your assignment repository at https://classroom.github.com/a/y9qwY8Wh. Please use this link once as it will create an repository we will not check for submissions if you use it multiple times. The repository name should lool like **a1-githubusername**. Any others will get removed.
@@ -26,19 +28,19 @@ At that point you'll be safe to edit your files without your edits disappearing 
 
 ### Preliminary Steps - Using the Code Library
 
-In order to use our library, tiny-graphics.js, you the programmer must provide additional code: Three custom JavaScript classes. Each of the three will be a subclass of a different base class from tiny-graphics.js: `Shape, Shader, and Scene_Component`. A Shape defines a 3D shape to draw, a `Shader` defines some code for coloring in triangles (perhaps as though they were illuminated by light sources), and a `Scene_Component` class tells the 3D canvas and web page what you want to happen (usually, drawing a scene by placing shapes). The three subclasses must define certain methods correctly for the library to work, or nothing will get drawn.
+In order to use our library, `tiny-graphics.js`, you the programmer must provide additional code: Three custom JavaScript classes. Each of the three will be a subclass of a different base class from tiny-graphics.js: `Shape`, `Shader`, and `Scene_Component`. A `Shape` defines a 3D shape to draw, a `Shader` defines some code for coloring in triangles (perhaps as though they were illuminated by light sources), and a `Scene_Component` class tells the 3D canvas and web page what you want to happen (usually, drawing a scene by placing shapes). The three subclasses must define certain methods correctly for the library to work, or nothing will get drawn.
 
 In order to get you started, we have provided TWO examples in your code of each of those custom subclasses, and you only have to tweak them to do this assignment. One of the Shapes we give, `Cube`, is complete, while the other, `Cube_Outline` is left empty for you to fill in.
 
-The two scenes we provide you are both located inside the file main-scene.js. Of these two `Scene_Component` subclasses in there, the one called `Assignment_One_Scene` is incomplete and draws nothing, left for you to fill in. It contains necessary setup code that you will need for making the required scene for credit.
+The two scenes we provide you are both located inside the file `main-scene.js`. Of these two `Scene_Component` subclasses in there, the one called `Assignment_One_Scene` is incomplete and draws nothing, left for you to fill in. It contains necessary setup code that you will need for making the required scene for credit.
 
-The other scene we provided in main-scene.js is a fully defined working example for you. The class, called `Transforms_Sandbox`, draws the extremely simple scene of boxes and balls you see when you initially run your Assignment 1 files. It is only thirty lines of code long, and exposes only the function calls that you need to see. It has the bare minimum to start using graphics to build a your first scene. Start your coding work there.
+The other scene we provided in `main-scene.js` is a fully defined working example for you. The class, called `Transforms_Sandbox`, draws the extremely simple scene of boxes and balls you see when you initially run your Assignment 1 files. It is only thirty lines of code long, and exposes only the function calls that you need to see. It has the bare minimum to start using graphics to build a your first scene. Start your coding work there.
 
 ### Experimenting with Transforms_Sandbox
 
 Inside the `display()` method of class `Transforms_Sandbox`, you will see some lines of code that call "`draw()`" on a particular shape, causing one of that shape to appear in the scene. You will also see other lines of code that modify a `model_transform` variable that contains a 4 by 4 matrix. These lines of code perform translations, rotations and scales -- the main math operations you need to understand to get started with graphics. To call them, pass in a 3x1 vector (a `Vec`, or a regular JavaScript array of three floats). In the case of `rotation()`, a scalar (representing the angle in radians) must be also provided along with the `Vec` (representing the axis of rotation).
 
-Read the code comments above the `Vec` and `Mat` classes in tiny-graphics.js to see how they work.
+Read the code comments above the `Vec` and `Mat` classes in `tiny-graphics.js` to see how they work.
 
 Note I: Only the `Vec.of()` function can generate new `Vec`s.
 
@@ -53,7 +55,11 @@ this.shapes.box.draw( graphics_state, M, this.clay.override({ color: blue }) );
 
 Play with the code in `Transforms_Sandbox` and re-run your program until you are comfortable with the effects of changing numbers passed in to the transforms. Move around the calls to `draw()` to place new shapes. Put your operations into loops to draw lots of shapes and test your understanding of JavaScript.
 
-Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes). You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther. __Your final scene must go in the `Assignment_One_Scene` class in order to be graded.__ That class exposes its constructor to you, where you can see how it sets up the camera, lighting shader, and materials (which contain quantities related to how shapes and lights will interact), which are all defined there to help you do the actual assignment requirements.
+Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes). You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther. 
+
+__Your final scene must go in the `Assignment_One_Scene` class in order to be graded.__
+
+That class exposes its constructor to you, where you can see how it sets up the camera, lighting shader, and materials (which contain quantities related to how shapes and lights will interact), which are all defined there to help you do the actual assignment requirements.
 
 In order to select the scene `Assignment_One_Scene` to display instead of `Transforms_Sandbox`, once you are ready to switch you must change your `index.html` file. Simply replace where the `Transforms_Sandbox` name appears with `Assignment_One_Scene`. It will draw that instead.
 
@@ -63,7 +69,9 @@ We have marked places in the code with "**// TODO**" to demark anywhere we inten
 
 #### Up to 50 points of credit. There is no partial credit any individual requirement.
 
-Implement the assignment in clean and understandable code. Each required part must successfully draw and show up onscreen in order to count. If any parts are unclear, ask on Piazza.
+Implement the assignment in clean and understandable code. Each required part must successfully draw and show up onscreen in order to count. 
+
+**If any parts are unclear, ask on Piazza.**
 
 #### Point distribution:
 
@@ -85,7 +93,7 @@ Implement the assignment in clean and understandable code. Each required part mu
 
     (c) Iteratively place the rest of the moving box segments on top of one another to complete the swaying motion. Use a hierarchical approach - each box's transform is the "child" of the previous transform, derived from its matrix value – **2 points.**
 
-    Hint: To make structures that have a parent-child hierarchy like this, you must incrementally create your transform using `times()` to **post-multiply** each new term onto the right side of your matrix variable. Do this to incrementally change it from the value that drew the previous (parent) box. Never do a pre-multiply for this assignment; for certain reasons that's not as useful for designing structures that you think of as a hierarchy of shapes.
+        Hint: To make structures that have a parent-child hierarchy like this, you must incrementally create your transform using `times()` to **post-multiply** each new term onto the right side of your matrix variable. Do this to incrementally change it from the value that drew the previous (parent) box. Never do a pre-multiply for this assignment; for certain reasons that's not as useful for designing structures that you think of as a hierarchy of shapes.
 
     You should learn to organize your code into functions, instead of describing your whole scene in `display()`. For part (c) we recommend moving your code for drawing one box into the `blank draw_box()` method, and then calling it many times from `display()` using a for loop.
 
