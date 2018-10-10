@@ -1,14 +1,14 @@
 ### Requirements: 
 
-Download the set of Assignment 1 files from GitHub.  Then, open the demo exactly as you did in Assignment 0: Run a dummy web server, navigate to the URL localhost:8000, observe the initial animation we provide, open Chrome developer tools, and perform the steps to map your local file folder as a Chrome workspace.  
+Download the set of Assignment 1 files from GitHub. Then, open the demo exactly as you did in Assignment 0: Run a dummy web server, navigate to the URL localhost:8000, observe the initial animation we provide, open Chrome developer tools, and perform the steps to map your local file folder as a Chrome workspace.  
 
-Note that Chrome might get a bit confused because you already did this before when you made a workspace for Assignment 0, in a different folder, with the same file names.  You don't want it to map to them by mistake.  Delete all workspaces out of the "Filesystem" tab before you repeat step 4 from homework zero.  In other words, you want new green dots from dragging in your Assignment 1 folder, not misleading ones still pointing at Assignment 0's files.
+Note that Chrome might get a bit confused because you already did this before when you made a workspace for Assignment 0, in a different folder, with the same file names. You don't want it to map to them by mistake. Delete all workspaces out of the "Filesystem" tab before you repeat step 4 from Assignment 0. In other words, you want new green dots from dragging in your Assignment 1 folder, not misleading ones still pointing at Assignment 0's files.
 
-At that point you'll be safe to edit your files without your edits disappearing or changing the wrong files.   Then, proceed as follows.
+At that point you'll be safe to edit your files without your edits disappearing or changing the wrong files. Then, proceed as follows.
 
 ### Preliminary Steps - Using the Code Library
 
-In order to use our library, tiny-graphics.js, you the programmer must provide additional code:  Three custom JavaScript classes.  Each of the three will be a subclass of a different base class from tiny-graphics.js: `Shape, Shader, and Scene_Component`.  A Shape defines a 3D shape to draw, a `Shader` defines some code for coloring in triangles (perhaps as though they were illuminated by light sources), and a `Scene_Component` class tells the 3D canvas and web page what you want to happen (usually, drawing a scene by placing shapes).  The three subclasses must define certain methods correctly for the library to work, or nothing will get drawn.
+In order to use our library, tiny-graphics.js, you the programmer must provide additional code: Three custom JavaScript classes.  Each of the three will be a subclass of a different base class from tiny-graphics.js: `Shape, Shader, and Scene_Component`. A Shape defines a 3D shape to draw, a `Shader` defines some code for coloring in triangles (perhaps as though they were illuminated by light sources), and a `Scene_Component` class tells the 3D canvas and web page what you want to happen (usually, drawing a scene by placing shapes). The three subclasses must define certain methods correctly for the library to work, or nothing will get drawn.
 
 In order to get you started, we have provided TWO examples in your code of each of those custom subclasses, and you only have to tweak them to do this assignment.  One of the Shapes we give, `Cube`, is complete, while the other, `Cube_Outline` is left empty for you to fill in.
 
@@ -35,7 +35,7 @@ this.shapes.box.draw( graphics_state, M, this.clay.override({ color: blue }) );
 
 Play with the code in `Transforms_Sandbox` and re-run your program until you are comfortable with the effects of changing numbers passed in to the transforms.  Move around the calls to `draw()` to place new shapes.  Put your operations into loops to draw lots of shapes and test your understanding of JavaScript.
 
-Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes).  You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther. __Your final scene must go in the `Assignment_One_Scene` class in order to be graded.__  That class exposes its constructor to you, where you can see how it sets up the camera, lighting shader, and materials (which contain quantities related to how shapes and lights will interact), which are all defined there to help you do the actual homework requirements.
+Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes).  You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther. __Your final scene must go in the `Assignment_One_Scene` class in order to be graded.__  That class exposes its constructor to you, where you can see how it sets up the camera, lighting shader, and materials (which contain quantities related to how shapes and lights will interact), which are all defined there to help you do the actual assignment requirements.
 
 In order to select the scene `Assignment_One_Scene` to display instead of `Transforms_Sandbox`, once you are ready to switch you must change your `index.html` file.  Simply replace where the `Transforms_Sandbox` name appears with `Assignment_One_Scene`.  It will draw that instead.
 
@@ -67,7 +67,7 @@ Implement the assignment in clean and understandable code.  Each required part m
 
     (c) Iteratively place the rest of the moving box segments on top of one another to complete the swaying motion.  Use a hierarchical approach - each box's transform is the "child" of the previous transform, derived from its matrix value –  **2 points.**
 
-    Hint:  To make structures that have a parent-child hierarchy like this, you must incrementally create your transform using `times()` to post-multiply each new term onto the right side of your matrix variable.  Do this to incrementally change it from the value that drew the previous (parent) box.  Never do a pre-multiply for this assignment; for certain reasons that's not as useful for designing structures that you think of as a hierarchy of shapes.
+    Hint:  To make structures that have a parent-child hierarchy like this, you must incrementally create your transform using `times()` to **post-multiply** each new term onto the right side of your matrix variable.  Do this to incrementally change it from the value that drew the previous (parent) box.  Never do a pre-multiply for this assignment; for certain reasons that's not as useful for designing structures that you think of as a hierarchy of shapes.
 
     You should learn to organize your code into functions, instead of describing your whole scene in `display()`.  For part (c) we recommend moving your code for drawing one box into the `blank draw_box()` method, and then calling it many times from `display()` using a for loop.
 
