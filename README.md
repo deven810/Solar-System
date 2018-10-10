@@ -2,7 +2,7 @@
 
 ### Repository setup:
 
-1. By now you have followed the link to create your assignment repository at https://classroom.github.com/a/wamrBrAf. Please use this link once as it will create an repository we will not check for submissions if you use it multiple times. The repository name should lool like **a1-githubusername**. Any others will get removed.
+1. By now you have followed the link to create your assignment repository at https://classroom.github.com/a/y9qwY8Wh. Please use this link once as it will create an repository we will not check for submissions if you use it multiple times. The repository name should lool like **a1-githubusername**. Any others will get removed.
 
 2. You should also be sure to share your GitHub username with us via this link if you have not already. https://goo.gl/forms/AKQYcllzjOP4UV6f1
 
