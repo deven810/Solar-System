@@ -1,6 +1,24 @@
-### Requirements: 
+# Assignment #1
 
-Download the set of Assignment 1 files from GitHub. Then, open the demo exactly as you did in Assignment 0: Run a dummy web server, navigate to the URL `localhost:8000`, observe the initial animation we provide, open Chrome developer tools, and perform the steps to map your local file folder as a Chrome workspace.
+### Repository setup:
+
+1. By now you have followed the link to create your assignment repository at https://classroom.github.com/a/wamrBrAf. Please use this link once as it will create an repository we will not check for submissions if you use it multiple times. The repository name should lool like **a1-githubusername**. Any others will get removed.
+
+2. You should also be sure to share your GitHub username with us via this link if you have not already. https://goo.gl/forms/AKQYcllzjOP4UV6f1
+
+   * You should also be sure to setup your local git environment and ssh keys to work with GitHub.
+
+3. Once your repository is created you will have a copy of the assignment template in your github repository. Now you can clone the repository onto your local computer using the following command. Be sure do execute this command from the directory you wish to locate your work.
+
+```bash
+$ git clone git@github.com:ucla-fa18-cs174a/a1-githubusername.git
+```
+
+4. You can now follow the remaining steps of the assignment.
+
+### Gettting Started: 
+
+Open the demo exactly as you did in Assignment 0: Run a dummy web server, navigate to the URL `localhost:8000`, observe the initial animation we provide, open Chrome developer tools, and perform the steps to map your local file folder as a Chrome workspace.
 
 Note that Chrome might get a bit confused because you already did this before when you made a workspace for Assignment 0, in a different folder, with the same file names. You don't want it to map to them by mistake. Delete all workspaces out of the "Filesystem" tab before you repeat step 4 from Assignment 0. In other words, you want new green dots from dragging in your Assignment 1 folder, not misleading ones still pointing at Assignment 0's files.
 
