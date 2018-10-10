@@ -109,3 +109,29 @@ I.  Implement the very bottom box's geometry as a single triangle strip primitiv
 Create a new `Shape` subclass with whatever correct entries in the `positions` and `indices` lists that will make that happen. Give each vertex a `normal` too that is simply equal to the position. When calling `draw()` to make this box, pass in the string "TRIANGLE_STRIP" for the fourth argument so that the graphics card uses triangle strip indexing. This box should appear lit up differently than the others, especially near edges as you move the camera around it, because of its unusual layout – **5 points.**
 
 II. Scale your boxes so that instead of being unit cubes, they are stretched to double their length only along the Y axis. Adjust your translations accordingly so that the correct hinge contact points are maintained throughout the swaying motion. Again, no floating geometry is allowed. Neither are any shearing effects that deform the boxes to non-right angles during motion. Prepare your left-to-right chain of transformations accordingly for each separate shape so that those things cannot happen – **5 points.**
+
+### Submitting Assignment 1 on GitHub:
+
+1. Once you are finished working it is time to 'commit' your work to your remote respository on GitHub. You will also want to do this periodically while you are working to make a backup of your work and to make your final submission. We will keep the process very simple by just 'committing' the master branch of your local repository into the remote repository on GitHub.
+
+2. The first step is to add any new files into the respository so they can be tracked.
+
+```bash
+$ git add *
+```
+
+3. Then we commit any new and or changed files to the repository. The text after the -m is for you to describe what is included in this commit to the respository.
+
+```bash
+$ git commit -m "Description of what I did"
+```
+
+4. Finally, we need to push these changes up to our remote repository on GitHub. This is a very important step! Without it you are not copying your work back to GitHub and we will not be able to see it if you forget.
+
+```bash
+$ git push remote origin
+```
+
+5. You can repeat these commands as often as you feel the need as your work on your assignment. However, again, you must always make a final push to GitHub when you are finished in order to submit your work. We will make a clone of all of the assignment repositories at the deadline. That implies two things. First, make your final push to GitHub ahead of time and second, any pushes you make after the deadline will not be seen by us.
+
+
