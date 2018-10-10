@@ -84,7 +84,7 @@ Implement the assignment in clean and understandable code. Each required part mu
 
     (b) Rather than drawing your outline at all times, fill in code inside your class method `make_control_panel()` to implement another button. Call `key_triggered_button()` as shown, and make sure the second argument is [ "o" ] so that we can press the o key to test your button. Fill in the third argument, the function that gets executed each button press, so as to toggle a flag that you'll use to turn the outline on and off. When the outline is off, draw the boxes normally (colors, lighting, etc.). When the outline is on, draw the outline instead on all boxes (it's OK to skip doing this for the bottom-most box since it's special, as explained below) – **2 points.**
 
-### Extra Credit: Each can be attempted individually. There is no partial credit on any individual extra credit.
+#### Extra Credit: Each can be attempted individually. There is no partial credit on any individual extra credit.
 
 I.  Implement the very bottom box's geometry as a single triangle strip primitive. This is like making a cube that can unfold into a single line.
 
