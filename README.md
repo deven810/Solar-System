@@ -31,7 +31,7 @@ M = M.times( T ).times( R ).times( S );
 this.shapes.box.draw( graphics_state, M, this.clay.override({ color: blue }) );
 ```
 
-![image-1](docs/image-1.gif)
+![image-0](docs/image-0.gif)
 
 Play with the code in `Transforms_Sandbox` and re-run your program until you are comfortable with the effects of changing numbers passed in to the transforms.  Move around the calls to `draw()` to place new shapes.  Put your operations into loops to draw lots of shapes and test your understanding of JavaScript.
 
@@ -57,7 +57,7 @@ Instance each of the eight cubes from the same geometry data (we defined this as
 
 3.  Make the stack of boxes sway like a blade of grass in the wind.  It should sway back and forth three times per second.  Be exact if you can.  Here is a GIF, slowed down.  It shows other parts of the assignment completed as well.
 
-![image-2](docs/image-2.gif)
+![image-1](docs/image-1.gif)
 
 (a)  Without passing through one another, the boxes must rotate over time to a maximum angle of `.04*Math.PI`.  Place the hinge of each box's rotation motion exactly at the top right edge of the box underneath it.  Each box touches the previous in exactly the same way and remains in constant contact, precisely connected only by the correct edge.  The boxes may not separate from each other along this edge; no floating geometry is allowed – **10 points.**
 
