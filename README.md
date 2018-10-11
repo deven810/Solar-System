@@ -18,7 +18,7 @@ $ git clone git@github.com:ucla-fa18-cs174a/a1-githubusername.git
 
 4. You can now follow the remaining steps of the assignment.
 
-### Gettting Started: 
+### Gettting Started:
 
 Open the demo exactly as you did in Assignment 0: Run a dummy web server, navigate to the URL `localhost:8000`, observe the initial animation we provide, open Chrome developer tools, and perform the steps to map your local file folder as a Chrome workspace.
 
@@ -55,7 +55,7 @@ this.shapes.box.draw( graphics_state, M, this.clay.override({ color: blue }) );
 
 Play with the code in `Transforms_Sandbox` and re-run your program until you are comfortable with the effects of changing numbers passed in to the transforms. Move around the calls to `draw()` to place new shapes. Put your operations into loops to draw lots of shapes and test your understanding of JavaScript.
 
-Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes). You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther. 
+Once you are comfortable with this, begin implementing the graded requirements below (a stack of cubes). You can paste code without issue from `Transform_Sandbox` to Assignment_One_Scene as long as it goes in `display()`, and you'll want to move over to there before going any farther.
 
 __Your final scene must go in the `Assignment_One_Scene` class in order to be graded.__
 
@@ -69,7 +69,9 @@ We have marked places in the code with "**// TODO**" to demark anywhere we inten
 
 #### Up to 50 points of credit. There is no partial credit any individual requirement.
 
-Implement the assignment in clean and understandable code. Each required part must successfully draw and show up onscreen in order to count. 
+Implement the assignment in clean and understandable code. Each required part must successfully draw and show up onscreen in order to count.
+
+NOTE: Please use the default camera definition defined in the `Assignment_One_Scene` class.
 
 **If any parts are unclear, ask on Piazza.**
 
@@ -95,11 +97,11 @@ Implement the assignment in clean and understandable code. Each required part mu
 
         Hint: To make structures that have a parent-child hierarchy like this, you must incrementally create your transform using `times()` to **post-multiply** each new term onto the right side of your matrix variable. Do this to incrementally change it from the value that drew the previous (parent) box. Never do a pre-multiply for this assignment; for certain reasons that's not as useful for designing structures that you think of as a hierarchy of shapes.
 
-    You should learn to organize your code into functions, instead of describing your whole scene in `display()`. For part (c) we recommend moving your code for drawing one box into the `blank draw_box()` method, and then calling it many times from `display()` using a for loop.
+    You should learn to organize your code into functions, instead of describing your whole scene in `display()`. For part (c) we recommend moving your code for drawing one box into the blank `draw_box()` method, and then calling it many times from `display()` using a for loop. Changing the function signature (arguments) to `draw_box()` is allowed, since it may be necessary to know which box (numbered from bottom to top) you're drawing for color purposes.
 
     (d) Fill in code inside your class method `make_control_panel()` to implement a button to help us with grading. To do this, call `key_triggered_button()` as already shown inside the method, and make sure the second argument is [ "m" ] so that we can press the m key to test your button. Fill in the third argument, the function that gets executed each button press, so as to make it toggle the swaying motion on and off. When the swaying is turned off, your blade of grass must be extended out to the maximum possible angle of `.04*Math.PI` so that we can see the gaps between your boxes along the left side – **2 points.**
 
-4. 
+4.
     (a) Color each box differently from the one underneath, for contrast. So that colors stay the same from one frame to the next, base your colors on persistent variables you store in your class, which means you'll use the "this" keyword to declare them – **7 points.**
 
     (b) Fill in the `set_colors()` function to somehow cause your class's colors to reset to different values. Once you do this, pressing the 'c' key (which already calls `set_colors`) should cycle the colors between the cubes – **2 points.**
@@ -112,11 +114,11 @@ Implement the assignment in clean and understandable code. Each required part mu
 
 #### Extra Credit: Each can be attempted individually. There is no partial credit on any individual extra credit.
 
-I.  Implement the very bottom box's geometry as a single triangle strip primitive. This is like making a cube that can unfold into a single line.
+I.  Triangle strips are a common graphics primitive. Implement the very bottom box's geometry as a single triangle strip primitive. This is like making a cube that can unfold into a single line of triangles.
 
 Create a new `Shape` subclass with whatever correct entries in the `positions` and `indices` lists that will make that happen. Give each vertex a `normal` too that is simply equal to the position. When calling `draw()` to make this box, pass in the string "TRIANGLE_STRIP" for the fourth argument so that the graphics card uses triangle strip indexing. This box should appear lit up differently than the others, especially near edges as you move the camera around it, because of its unusual layout – **5 points.**
 
-II. Scale your boxes so that instead of being unit cubes, they are stretched to double their length only along the Y axis. Adjust your translations accordingly so that the correct hinge contact points are maintained throughout the swaying motion. Again, no floating geometry is allowed. Neither are any shearing effects that deform the boxes to non-right angles during motion. Prepare your left-to-right chain of transformations accordingly for each separate shape so that those things cannot happen – **5 points.**
+II. Scale your boxes so that instead of being unit cubes, they are stretched to 1.5x their length only along the Y axis. Adjust your translations accordingly so that the correct hinge contact points are maintained throughout the swaying motion. Again, no floating geometry is allowed. Neither are any shearing effects that deform the boxes to non-right angles during motion. Prepare your left-to-right chain of transformations accordingly for each separate shape so that those things cannot happen – **5 points.**
 
 ### Submitting Assignment 1 on GitHub:
 
@@ -141,5 +143,3 @@ $ git push remote origin
 ```
 
 5. You can repeat these commands as often as you feel the need as your work on your assignment. However, again, you must always make a final push to GitHub when you are finished in order to submit your work. We will make a clone of all of the assignment repositories at the deadline. That implies two things. First, make your final push to GitHub ahead of time and second, any pushes you make after the deadline will not be seen by us.
-
-
